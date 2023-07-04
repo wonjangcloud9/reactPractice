@@ -42,7 +42,7 @@ function App() {
               </button>
             </h4>
             <p>7월 3일 발행</p>
-            {modal === true ? <Footer /> : null}
+            {modal === true ? <Footer test={"ㅇㅋ"} /> : null}
           </div>
         );
       })}
@@ -50,8 +50,8 @@ function App() {
   );
 }
 
-function Footer() {
-  return <div>작성자 - 원장</div>;
+function Footer(props) {
+  return <div>작성자 - 원장 {props.test}</div>;
 }
 
 export default App;
