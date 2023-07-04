@@ -10,6 +10,7 @@ function App() {
   ]);
   let [logo, setLogo] = useState("ReactBlog");
   let [따봉, 따봉변경] = useState(0);
+  let [modal, setModal] = useState(false);
 
   return (
     <div className="App">
@@ -24,6 +25,7 @@ function App() {
               <span
                 onClick={() => {
                   따봉변경(따봉 + 1);
+                  setModal(!modal);
                 }}
               >
                 👍
@@ -40,7 +42,7 @@ function App() {
               </button>
             </h4>
             <p>7월 3일 발행</p>
-            <Footer />
+            {modal === true ? <Footer /> : null}
           </div>
         );
       })}
